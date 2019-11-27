@@ -7,14 +7,14 @@ import './style.css'
 
 const Home = props => {
     return(
-        <div>
+        <div className= 'container__home'>
             <div>
                 <Logo/>
            </div>
            <div>
                <Search/>
            </div>       
-        </div>        
+        </div>       
     )
 }
 export default Home

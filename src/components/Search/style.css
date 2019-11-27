@@ -1,10 +1,14 @@
-/* input */
+
+.container__search{
+    display: flex;
+}
+
 .Search-Input {
     width: 650px;
     height: 50px;
     background-color: var(--white);
   }
-/* button */
+
 
 .button {
     width: 100px;
