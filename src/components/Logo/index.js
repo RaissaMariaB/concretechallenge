@@ -2,7 +2,15 @@ import React from "react"
 
 import "./style.css"
 
-const Logo = props => <p className="Github-Search">Github <span className ="text-style-1">Search</span></p>
-    
- 
+const Logo = props => {
+  const {classGit, classSearch} = props
+  return (
+    <div>
+      <p className= {classGit}>
+        Github <span className= {classSearch}>Search</span>
+      </p>
+    </div>
+  )
+}
+
 export default Logo

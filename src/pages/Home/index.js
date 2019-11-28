@@ -9,10 +9,10 @@ const Home = props => {
     return(
         <div className= 'container__home'>
             <div>
-                <Logo/>
+                <Logo classGit='Github-Search'/>
            </div>
            <div>
-               <Search/>
+               <Search classSearch='text-style-1'/>
            </div>       
         </div>       
     )
