@@ -4,12 +4,10 @@ import "./style.css"
 
 const Logo = props => {
   const {classGit, classSearch} = props
-  return (
-    <div>
-      <p className= {classGit}>
+  return (    
+      <h1 className= {classGit}>
         Github <span className= {classSearch}>Search</span>
-      </p>
-    </div>
+      </h1>    
   )
 }
 
