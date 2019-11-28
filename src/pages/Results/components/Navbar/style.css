@@ -1,8 +1,10 @@
 * {
     box-sizing: border-box;
-    margin: 0 auto;
+    margin: auto auto;
   }
 
-  .classNav{
+  .container__nav{
     display: flex;
+    margin: 35px 27px;
+    
   }

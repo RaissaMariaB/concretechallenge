@@ -3,8 +3,6 @@
 
 .Github-Search {
   display: inline;
-  width: 415px;
-  height: 81px;
   font-family: Monaco;
   font-size: 60px;
   color: #000000;
@@ -17,16 +15,17 @@
   font-style: italic;
 }
 
+.text-style2{
+  font-family: Raleway;
+  font-weight: 200;
+  font-style: italic;
+  font-size:40px;
+}
+
 
 .Github-Search2 {
-  width: 280px;
-  height: 50px;
   font-family: Monaco;
-  font-size: 40px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
+  font-size: 40px; 
   color: #000000;
+  
 }

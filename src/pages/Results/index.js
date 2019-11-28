@@ -1,10 +1,10 @@
 import React, {Fragment} from 'react'
-import navBar from './components/Navbar'
+import Nav from './components/Navbar'
 
-const Results = () =>{
+const Results = () => {
     return(
         <Fragment>
-            <navBar classNav='classNav'/>
+            <Nav classNav='classNav'/>
         </Fragment>
     )
 }

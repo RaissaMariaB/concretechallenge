@@ -1,6 +1,6 @@
 .container__search{
     display: flex;    
-    width: 100%;
+    
     
 }
 
@@ -24,3 +24,5 @@
     box-shadow: 0 0 4px NaNpx var(--black-40);
     background-color:  var(--white);
   } 
+
+  
