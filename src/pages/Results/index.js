@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, {Fragment} from 'react'
 import Nav from './components/Navbar'
 
@@ -8,5 +9,12 @@ const Results = () => {
         </Fragment>
     )
 }
+=======
+import React from 'react'
+import NavBar from './components/Navbar'
+>>>>>>> results
 
+const Results = () => <div className ='Result'>  <NavBar classNav='classNav'/>    </div>
+        
+           
 export default Results
