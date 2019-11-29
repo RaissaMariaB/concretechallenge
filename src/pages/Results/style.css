@@ -1,5 +1,19 @@
-.Result {
-    width: 1152px;
-    height: 800px;
-    background-color: var(--white);
-  }
+* {
+  box-sizing: border-box;
+}
+
+.result-nav {
+  width: 100vw;
+  display: flex;
+  margin-top: 35px;
+  margin-right: 27px;   
+}
+
+.result-flex {
+  display: flex;
+
+}
+
+.result-margin {
+  margin: 0;
+}
