@@ -8,9 +8,9 @@ import './style.css'
 const Search = props =>  {    
     return(        
         <div className= 'container__search'> 
-            <Input classInput='Search-Input'></Input>
-            <Button classButton="button">
-                <img src= {Lupa} alt="imagem de uma lupa" className="search-icon"/>
+            <Input classInput='Search-Input' typing={props.typing} ></Input>
+            <Button classButton="button" click={props.click}>
+                <img src= {Lupa} alt="imagem de uma lupa" className="search-icon"   />
             </Button>
         </div>       
     )
