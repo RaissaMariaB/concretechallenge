@@ -3,3 +3,8 @@
     height: 800px;
     background-color: var(--white);
   }
+
+  .photo_profile{
+    width: '280px';
+    height: '280px'
+  }
