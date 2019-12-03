@@ -1,13 +1,13 @@
 import React from 'react'
-
 import './style.css'
 
 const IconsText = props => {
     const {icon, alt, class_icon, children} = props
+    console.log(props)
     return (
         <div className='container__icon'>
             <img src={icon} alt={alt} className={class_icon}></img>
-            <p className='icon-text'>{children}</p>
+            <p className='icon__text'>{children}</p>
         </div>
     )
 }

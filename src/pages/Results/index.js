@@ -15,12 +15,12 @@ class Results extends Component{
     }
 
     render(){
-        console.log(this.props);
-        
+        // console.log(this.props)
         return(
             <Fragment>
                 <Nav classNav='classNav'/> 
-                <Profile/> 
+                <Profile avatar_url={this.props.location.state.user.avatar_url}
+                /> 
                             
             </Fragment>
             
