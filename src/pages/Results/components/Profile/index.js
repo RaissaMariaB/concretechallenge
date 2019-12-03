@@ -7,23 +7,23 @@ import Star from '../../../../assets/star_icon.png'
 import './style.css'
 
 const Profile = props =>{
-    console.log(props)
+    const {avatar_url, user_name, user_login, text} = props
     return(
         <div className='container__profile'>
             <PhotoProfile
-            avatar_url={props.avatar_url}
+            avatar_url={avatar_url}
             />
             <Description
             description_title='user__name'
             description_P= 'user__login'
-            user_name= {props.title}
-            user_login={props.login}
+            user_name= {user_name}
+            user_login={user_login}
             />
             <IconsText
             icon={Star}
             alt= 'star icon'
             class_icon='icon'
-            children= 'lindx demaaaais'
+            children= {text}
             />
         </div>
     )

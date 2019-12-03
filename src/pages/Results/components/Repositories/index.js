@@ -1,28 +1,31 @@
 import React from 'react'
-import './Repositories.css'
-import IconText from '../../../../components/IconText/IconText'
-import Description from '../../../../components/Description/Description'
-import starIcon from '../../../../assets/icons/star-icon.svg'
+import IconText from '../IconsText'
+import Description from '../Description'
+import Star from '../../../../assets/star_icon.png'
+
+import './style.css'
 
 const Repositories = (props) => {
     const { repos } = props
     return (
         <div>
-            {repos.map(repo => (
-                <div className='repositories-box'>
+            {/* {repos.map(repos => ( */}
+                <div className='container_repos'>
                     <Description
-                        title={repo.name}
-                        description={repo.description}
-                        classTitle='repositories-title'
-                        classParagraph='repositories-paragraph'
+                        user_name= 'Nome do repositório'
+                        user_login= 'Descriçã do repositório'
+                        description_title='repos_title'
+                        description_p='repos_p'
                     ></Description>
+                    <div  className='star'>
                     <IconText
-                        icon={starIcon}
+                        icon={Star}
                         alt='organization icon'
                         classIcon='icon-repositories'
-                    >{repo.stargazers_count}</IconText>
+                    >1000</IconText>
+                    </div>
                 </div>
-            ))}
+            {/* ))} */}
         </div>
     )
 }

@@ -1,11 +1,11 @@
-.repositories-title {
+.repos_title {
     font-family: 'Raleway', sans-serif;
     font-weight: 300;
     font-size: 35px;
     color: #ac53f2;
 }
 
-.repositories-paragraph {
+.repos_p {
     font-family: 'Raleway', sans-serif;
     font-weight: 300;
     font-size: 20px;
@@ -13,6 +13,12 @@
     color: black;
 }
 
-.repositories-box {
+.container_repos {
     margin-bottom: 30px;
+    width: 600px;
+    margin-right: 200px;
+}
+
+.star{
+
 }
