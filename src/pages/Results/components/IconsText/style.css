@@ -4,6 +4,10 @@
     align-items: center;
     margin-bottom: 15px; 
 }
+
+.container__icon > img {
+    margin: 0px;
+}
     
 
 .icon {

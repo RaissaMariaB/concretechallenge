@@ -21,14 +21,17 @@ class Results extends Component{
         return(
             <Fragment>
             <Nav classNav='classNav'/> 
-            <div className= 'container_results'>
-          
+            <div className= 'container_results'>          
                 <Profile avatar_url={this.props.location.state.user.avatar_url}
-                user_name = {this.props.location.state.user.name}
-                user_login = {this.props.location.state.user.login}
+                user_name= {this.props.location.state.user.name}
+                user_login= {this.props.location.state.user.login}
+                textOrganization={this.props.location.state.user.company}
+                textLocation={this.props.location.state.user.location}
+                textStar={this.props.location.state.user.public_repos}
+                textRepositories={this.props.location.state.user.followers}
+                textFollowers={this.props.location.state.user.following}
                 /> 
-                <Repositories/>
-                            
+                <Repositories/>                            
             </div>
             </Fragment>
             

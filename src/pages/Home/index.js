@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import Search from "../../components/Search";
 import Logo from "../../components/Logo";
+import NotFound from '../Results/NotFound'
 import { getUser } from "../../services/api/users";
+
 
 import "./style.css";
 
@@ -37,8 +39,8 @@ class Home extends Component {
           });
         })
         .catch(error => {
-        // this.props.history.push("/results");
-        console.log('error')
+        this.props.history.push("/results");
+        
         });
     }
   };
