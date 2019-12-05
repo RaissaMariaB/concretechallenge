@@ -21,16 +21,22 @@ class Results extends Component{
     }
 
     componentDidMount(){   
-        if(this.props.location.state){
-            if(this.props.location.state.user)    
-            this.searchRepos(this.props.location.state.user.login)
-            this.setState({
-                user: this.props.location.state.user,
-                error: this.props.location.state.error
-            })
+       if(this.props.location.state){
+            if(this.props.location.state.user)  {
+                this.searchRepos(this.props.location.state.user.login)
+                this.setState({
+                    user: this.props.location.state.user,
+                })
+
+            }  
+            if(this.props.location.state.error){
+                this.setState({
+                    error: 'user not found :('
+                })
+            }
             
 
-        }
+       }
 
 
     }
@@ -76,7 +82,7 @@ class Results extends Component{
             click={this.searching}
             />
 
-            {!this.state.error ?     
+            {this.state.error !== '' ?     
             <div className= 'container_results'>          
                 <Profile avatar_url={avatar_url}
                 user_name= {name}
