@@ -8,6 +8,7 @@ import NotFound from './NotFound'
 
 import './style.css'
 import { thisExpression } from '@babel/types'
+import IconsText from './components/IconsText/index.js'
 
 class Results extends Component{
     constructor(props){
@@ -42,16 +43,22 @@ class Results extends Component{
                 user_login= {login}
                 textOrganization={company}
                 textLocation={location}
-                textStar={public_repos}
-                textRepositories={followers}
+                textStar={followers}
+                textRepositories={public_repos}
                 textFollowers={following}
                 /> 
                 <div>
-                    {this.state.repos.map(repo =>  
+                    {this.state.repos.map(repo =>
+                    
+                        <Fragment>
                         <Repositories key= {repo.id}
                          repoName= {repo.name}
                          repoDescription={repo.description}                
                         />                 
+                        <IconsText classIcon ='icon__repositories' >
+                         {repo.stargazers_count}
+                        </IconsText>
+                        </Fragment>                  
                       )}
                 </div>
                                             
