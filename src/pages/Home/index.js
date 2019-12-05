@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Search from "../../components/Search";
 import Logo from "../../components/Logo";
-import NotFound from '../Results/NotFound'
 import { getUser } from "../../services/api/users";
 
 
@@ -13,6 +12,7 @@ class Home extends Component {
     this.state = {
       value: "",
       user: {},
+      error:""
     };
   }
 
@@ -38,13 +38,17 @@ class Home extends Component {
           })
         })
         .catch(error => {
-          console.error(error)
-          return(
-            <NotFound/>
-          )
-        // this.props.history.push("/notFound");
-        
-        });
+          
+          
+           this.props.history.push({
+               pathname:"/results",
+               state: {
+                   error : "User not found :( ",
+                //   error: error.response.data.message
+                 }
+              })     
+              
+            });
     }
   };
 

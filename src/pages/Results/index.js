@@ -5,10 +5,9 @@ import Repositories from '../Results/components/Repositories'
 import { getUser } from '../../services/api/users'
 import { getRepos } from '../../services/api/users'
 import NotFound from './NotFound'
+import IconsText from './components/IconsText/index.js'
 
 import './style.css'
-import { thisExpression } from '@babel/types'
-import IconsText from './components/IconsText/index.js'
 
 class Results extends Component{
     constructor(props){
@@ -21,11 +20,18 @@ class Results extends Component{
     }
     }
 
-    componentDidMount(){
-        this.searchRepos(this.props.location.state.user.login);
-        this.setState({
-            user: this.props.location.state.user
-        })
+    componentDidMount(){   
+        if(this.props.location.state){
+            if(this.props.location.state.user)    
+            this.searchRepos(this.props.location.state.user.login)
+            this.setState({
+                user: this.props.location.state.user,
+                error: this.props.location.state.error
+            })
+            
+
+        }
+
 
     }
 
@@ -50,7 +56,7 @@ class Results extends Component{
         this.setState({
           value: e.target.value
         })
-         console.log(this.state.value);
+         
         
       }
 
@@ -59,15 +65,18 @@ class Results extends Component{
         this.searchRepos(this.state.value);
     }  
     render(){
-        
         const {avatar_url, name, login, company, location, public_repos, followers, following} = this.state.user
+        console.log(this.state.error, 'console de erro render');
+        
         return(
             <Fragment>
+           
             <Nav classNav='classNav'
             typing={this.inputValue}
             click={this.searching}
             />
-                 
+
+            {!this.state.error ?     
             <div className= 'container_results'>          
                 <Profile avatar_url={avatar_url}
                 user_name= {name}
@@ -90,10 +99,10 @@ class Results extends Component{
                         </IconsText>
                         </Fragment>                  
                       )}
-                </div>
-                                            
+                </div>                
             </div>
-            </Fragment>           
+            : <NotFound /> }
+        </Fragment>           
         )
     }
 }       
