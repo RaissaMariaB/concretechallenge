@@ -3,38 +3,60 @@ import Nav from './components/Navbar/index.js'
 import Profile from './components/Profile'
 import Repositories from '../Results/components/Repositories'
 import { getUser } from '../../services/api/users'
+import { getRepos } from '../../services/api/users'
 import NotFound from './NotFound'
 
 import './style.css'
+import { thisExpression } from '@babel/types'
 
 class Results extends Component{
     constructor(props){
     super(props)
     this.state= {
         value:'',
-        error:''
+        error:'',
+        repos:[]
     }
     }
 
+    componentDidMount(){
+        getRepos('RaissaMariaB').then(response => {
+            this.setState({
+                repos: response.data
+            })
+        }
+            
+        )
+    }
+
+
     render(){
-        console.log(this.props)
+        
+        const {avatar_url, name, login, company, location, public_repos, followers, following} = this.props.location.state.user
         return(
             <Fragment>
             <Nav classNav='classNav'/> 
             <div className= 'container_results'>          
-                <Profile avatar_url={this.props.location.state.user.avatar_url}
-                user_name= {this.props.location.state.user.name}
-                user_login= {this.props.location.state.user.login}
-                textOrganization={this.props.location.state.user.company}
-                textLocation={this.props.location.state.user.location}
-                textStar={this.props.location.state.user.public_repos}
-                textRepositories={this.props.location.state.user.followers}
-                textFollowers={this.props.location.state.user.following}
+                <Profile avatar_url={avatar_url}
+                user_name= {name}
+                user_login= {login}
+                textOrganization={company}
+                textLocation={location}
+                textStar={public_repos}
+                textRepositories={followers}
+                textFollowers={following}
                 /> 
-                <Repositories/>                            
+                <div>
+                    {this.state.repos.map(repo => (
+                    <Repositories
+                        
+                   />  
+
+                ))}
+                 </div>
+                                            
             </div>
-            </Fragment>
-            
+            </Fragment>           
         )
     }
 }       

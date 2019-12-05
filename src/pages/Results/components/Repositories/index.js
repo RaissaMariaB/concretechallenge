@@ -8,8 +8,7 @@ import './style.css'
 const Repositories = (props) => {
     const { repos } = props
     return (
-        <div>
-            {/* {repos.map(repos => ( */}
+        <div>            
                 <div className='container_repos'>
                     <Description
                         user_name= 'Nome do repositório'
@@ -24,8 +23,7 @@ const Repositories = (props) => {
                         classIcon='icon-repositories'
                     >1000</IconText>
                     </div>
-                </div>
-            {/* ))} */}
+                </div>            
         </div>
     )
 }

@@ -13,7 +13,6 @@ class Home extends Component {
     this.state = {
       value: "",
       user: {},
-      repos: []
     };
   }
 
@@ -39,7 +38,11 @@ class Home extends Component {
           });
         })
         .catch(error => {
-        this.props.history.push("/results");
+          console.error(error)
+          return(
+            <NotFound/>
+          )
+        // this.props.history.push("/notFound");
         
         });
     }
