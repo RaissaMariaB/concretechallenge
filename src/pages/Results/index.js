@@ -16,27 +16,58 @@ class Results extends Component{
     this.state= {
         value:'',
         error:'',
-        repos:[]
+        repos:[],
+        user: {}
     }
     }
 
     componentDidMount(){
-        getRepos('RaissaMariaB').then(response => {
+        this.searchRepos(this.props.location.state.user.login);
+        this.setState({
+            user: this.props.location.state.user
+        })
+
+    }
+
+    searchUser = (valor) => {
+        getUser(valor)
+        .then(response => {
+          this.setState({
+            user: response.data
+          })   
+         } )}
+    
+
+    searchRepos = (name) => {
+        getRepos(name).then(response => {
             this.setState({
                 repos: response.data
             })
-        }
-            
-        )
+        })
     }
 
+    inputValue = e => {
+        this.setState({
+          value: e.target.value
+        })
+         console.log(this.state.value);
+        
+      }
 
+    searching = e =>{
+        this.searchUser(this.state.value);
+        this.searchRepos(this.state.value);
+    }  
     render(){
         
-        const {avatar_url, name, login, company, location, public_repos, followers, following} = this.props.location.state.user
+        const {avatar_url, name, login, company, location, public_repos, followers, following} = this.state.user
         return(
             <Fragment>
-            <Nav classNav='classNav'/> 
+            <Nav classNav='classNav'
+            typing={this.inputValue}
+            click={this.searching}
+            />
+                 
             <div className= 'container_results'>          
                 <Profile avatar_url={avatar_url}
                 user_name= {name}
@@ -48,10 +79,9 @@ class Results extends Component{
                 textFollowers={following}
                 /> 
                 <div>
-                    {this.state.repos.map(repo =>
-                    
-                        <Fragment>
-                        <Repositories key= {repo.id}
+                    {this.state.repos.map(repo =>                     
+                        <Fragment  key= {repo.id}>
+                        <Repositories
                          repoName= {repo.name}
                          repoDescription={repo.description}                
                         />                 

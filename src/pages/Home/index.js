@@ -29,13 +29,13 @@ class Home extends Component {
         .then(response => {
           this.setState({
             user: response.data
-          });
+          })
           this.props.history.push({
             pathname: "/results",
             state: {
                user: this.state.user
             }
-          });
+          })
         })
         .catch(error => {
           console.error(error)

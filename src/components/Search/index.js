@@ -5,11 +5,12 @@ import Input from './Input'
 
 import './style.css'
 
-const Search = props =>  {    
+const Search = props =>  {  
+    const {typing, click} = props  
     return(        
         <div className= 'container__search'> 
-            <Input classInput='Search-Input' typing={props.typing} ></Input>
-            <Button classButton="button" click={props.click}>
+            <Input classInput='Search-Input' typing={typing} ></Input>
+            <Button classButton="button" click={click}>
                 <img src= {Lupa} alt="imagem de uma lupa" className="search-icon"   />
             </Button>
         </div>       
