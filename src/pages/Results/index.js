@@ -47,13 +47,13 @@ class Results extends Component{
                 textFollowers={following}
                 /> 
                 <div>
-                    {this.state.repos.map(repo => (
-                    <Repositories
-                        
-                   />  
-
-                ))}
-                 </div>
+                    {this.state.repos.map(repo =>  
+                        <Repositories key= {repo.id}
+                         repoName= {repo.name}
+                         repoDescription={repo.description}                
+                        />                 
+                      )}
+                </div>
                                             
             </div>
             </Fragment>           
