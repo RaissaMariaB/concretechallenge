@@ -1,0 +1,28 @@
+.container__search{
+    display: flex;    
+    
+    
+}
+
+.Search-Input {
+    width: 650px;
+    height: 50px;
+       
+  }
+
+  .button {
+    width: 100px;
+    height: 50px;
+    border:none;
+    border-radius: 2px;
+    background-color: #ac53f2;
+  }
+
+  .search-icon {
+    width: 30px;
+    height: 30.1px;
+    box-shadow: 0 0 4px NaNpx var(--black-40);
+    background-color:  var(--white);
+  } 
+
+  
