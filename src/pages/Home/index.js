@@ -3,7 +3,6 @@ import Search from "../../components/Search";
 import Logo from "../../components/Logo";
 import { getUser } from "../../services/api/users";
 
-
 import "./style.css";
 
 class Home extends Component {
@@ -12,7 +11,7 @@ class Home extends Component {
     this.state = {
       value: "",
       user: {},
-      error:""
+      error: ""
     };
   }
 
@@ -24,31 +23,27 @@ class Home extends Component {
 
   searching = () => {
     if (this.state.value !== "") {
-       
       getUser(this.state.value)
         .then(response => {
           this.setState({
             user: response.data
-          })
+          });
           this.props.history.push({
             pathname: "/results",
             state: {
-               user: this.state.user
+              user: this.state.user
             }
-          })
+          });
         })
         .catch(error => {
-          
-          
-           this.props.history.push({
-               pathname:"/results",
-               state: {
-                   error : "User not found :( ",
-                //   error: error.response.data.message
-                 }
-              })     
-              
-            });
+          this.props.history.push({
+            pathname: "/results",
+            state: {
+              error: "User not found :( "
+              //   error: error.response.data.message
+            }
+          });
+        });
     }
   };
 
