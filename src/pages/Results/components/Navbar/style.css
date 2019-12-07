@@ -1,10 +1,9 @@
 * {
     box-sizing: border-box;
-    margin: auto auto;
   }
 
   .container__nav{
     display: flex;
     margin: 35px 27px;
-    
+    justify-content: space-around;    
   }

@@ -1,12 +1,15 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 
-const NotFound =() =>{
+
+
+const NotFound = () =>{
     return(
-        <div className='container__notfound'>
-            <p></p>
-        </div>
+        <Fragment>
+            <div className='container__notfound'>
+                <p> User not found :( </p>
+            </div>
+        </Fragment>
     )
-
 }
 
 export default NotFound

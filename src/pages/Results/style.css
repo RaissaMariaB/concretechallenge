@@ -1,19 +1,9 @@
-* {
-  box-sizing: border-box;
-}
+  .photo_profile{
+    width: '280px';
+    height: '280px'
+  }
 
-.result-nav {
-  width: 100vw;
-  display: flex;
-  margin-top: 35px;
-  margin-right: 27px;   
-}
-
-.result-flex {
-  display: flex;
-
-}
-
-.result-margin {
-  margin: 0;
-}
+  .container_results{
+    display: flex;
+    
+  }
