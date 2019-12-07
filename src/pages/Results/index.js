@@ -4,19 +4,18 @@ import Profile from './components/Profile'
 import Repositories from '../Results/components/Repositories'
 import { getUser, getRepos} from '../../services/api/users'
 import NotFound from './NotFound'
-import IconsText from './components/IconsText/index.js'
 
 import './style.css'
 
 class Results extends Component{
     constructor(props){
-    super(props)
-    this.state= {
-        value:'',
-        error:'',
-        repos:[],
-        user: {}
-    }
+        super(props)
+        this.state= {
+            value:'',
+            error:'',
+            repos:[],
+            user: {}
+        }
     }
 
     componentDidMount(){   
@@ -86,8 +85,7 @@ class Results extends Component{
 
     render(){
         const {avatar_url, name, login, company, location, public_repos, followers, following} = this.state.user
-        console.log(this.state.error, 'console de erro render');
-        
+                
         return(
             <Fragment>
            
@@ -107,16 +105,15 @@ class Results extends Component{
                 textRepositories={public_repos}
                 textFollowers={following}
                 /> 
-                <div>
-                    {this.state.repos.map(repo =>                     
+                <div className= 'container_repo'>
+                    {this.state.repos.sort((a, b) => b.stargazers_count - a.stargazers_count).map(repo =>                    
                         <Fragment  key= {repo.id}>
                         <Repositories
                          repoName= {repo.name}
-                         repoDescription={repo.description}                
-                        />                 
-                        <IconsText classIcon ='icon__repositories' >
-                         {repo.stargazers_count}
-                        </IconsText>
+                         repoDescription={repo.description}   
+                         repoStargazersCount={repo.stargazers_count}            
+                        />          
+                                                  
                         </Fragment>                  
                       )}
                 </div>                
