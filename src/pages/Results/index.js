@@ -4,7 +4,6 @@ import Profile from './components/Profile'
 import Repositories from '../Results/components/Repositories'
 import { getUser, getRepos} from '../../services/api/users'
 import NotFound from './NotFound'
-import IconsText from './components/IconsText/index.js'
 
 import './style.css'
 
@@ -111,12 +110,10 @@ class Results extends Component{
                         <Fragment  key= {repo.id}>
                         <Repositories
                          repoName= {repo.name}
-                         repoDescription={repo.description}                
-                        />                 
-                        <IconsText 
-                        classIcon ='icon__repositories'
-                        children={repo.stargazers_count}
-                        />                          
+                         repoDescription={repo.description}   
+                         repoStargazersCount={repo.stargazers_count}            
+                        />          
+                                                  
                         </Fragment>                  
                       )}
                 </div>                
