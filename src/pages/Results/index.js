@@ -2,8 +2,7 @@ import React, {Component, Fragment} from 'react'
 import Nav from './components/Navbar/index.js'
 import Profile from './components/Profile'
 import Repositories from '../Results/components/Repositories'
-import { getUser } from '../../services/api/users'
-import { getRepos } from '../../services/api/users'
+import { getUser, getRepos} from '../../services/api/users'
 import NotFound from './NotFound'
 import IconsText from './components/IconsText/index.js'
 
@@ -25,35 +24,49 @@ class Results extends Component{
             if(this.props.location.state.user)  {
                 this.searchRepos(this.props.location.state.user.login)
                 this.setState({
-                    user: this.props.location.state.user,
+                    user: this.props.location.state.user ,
+                    error: ''  
                 })
 
             }  
             if(this.props.location.state.error){
                 this.setState({
+                    user: '',
                     error: 'user not found :('
                 })
-            }
-            
-
+            }     
        }
-
-
     }
 
-    searchUser = (valor) => {
-        getUser(valor)
+    searchUser = (value) => {
+        getUser(value)
         .then(response => {
           this.setState({
-            user: response.data
+            user: response.data,
+            error: ''
           })   
-         } )}
+         })
+         .catch(error =>{
+             this.setState({
+                user: '',
+                error: 'User not found :('
+
+             })
+         })
+    }
     
 
     searchRepos = (name) => {
         getRepos(name).then(response => {
             this.setState({
                 repos: response.data
+            })
+        })
+        .catch(error =>{
+            this.setState({
+               user: '',
+               error: 'User not found :('
+
             })
         })
     }
@@ -70,6 +83,7 @@ class Results extends Component{
         this.searchUser(this.state.value);
         this.searchRepos(this.state.value);
     }  
+
     render(){
         const {avatar_url, name, login, company, location, public_repos, followers, following} = this.state.user
         console.log(this.state.error, 'console de erro render');
@@ -82,7 +96,7 @@ class Results extends Component{
             click={this.searching}
             />
 
-            {this.state.error !== '' ?     
+            {this.state.error == '' ?     
             <div className= 'container_results'>          
                 <Profile avatar_url={avatar_url}
                 user_name= {name}
