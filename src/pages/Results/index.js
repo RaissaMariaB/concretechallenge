@@ -86,7 +86,7 @@ class Results extends Component{
 
     render(){
         const {avatar_url, name, login, company, location, public_repos, followers, following} = this.state.user
-        console.log(this.state.error, 'console de erro render');
+        
         
         return(
             <Fragment>
@@ -108,7 +108,7 @@ class Results extends Component{
                 textFollowers={following}
                 /> 
                 <div>
-                    {this.state.repos.map(repo =>                     
+                    {this.state.repos.sort((a, b) => b.stargazers_count - a.stargazers_count).map(repo =>                    
                         <Fragment  key= {repo.id}>
                         <Repositories
                          repoName= {repo.name}
