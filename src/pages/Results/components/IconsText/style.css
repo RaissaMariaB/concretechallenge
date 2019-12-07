@@ -1,7 +1,5 @@
 .container__icon {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
     margin-top: 15px; 
 }
 

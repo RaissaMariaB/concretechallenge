@@ -2,9 +2,14 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:200i,300,400&display=swap');
 
 .container__notfound{
+    height: 150px;
     display: flex;
     justify-content: center;
-    font-family: Raleway-Regular;
-    font-size: 40px;
-    color: #ac53f2;
+    align-items: flex-end
 }
+
+.container__notfound > p {
+    font-family: Raleway;
+    font-size: 40px;    
+    color: #ac53f2;
+  }

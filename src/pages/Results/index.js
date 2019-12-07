@@ -10,13 +10,13 @@ import './style.css'
 
 class Results extends Component{
     constructor(props){
-    super(props)
-    this.state= {
-        value:'',
-        error:'',
-        repos:[],
-        user: {}
-    }
+        super(props)
+        this.state= {
+            value:'',
+            error:'',
+            repos:[],
+            user: {}
+        }
     }
 
     componentDidMount(){   
@@ -86,8 +86,7 @@ class Results extends Component{
 
     render(){
         const {avatar_url, name, login, company, location, public_repos, followers, following} = this.state.user
-        
-        
+                
         return(
             <Fragment>
            
@@ -114,9 +113,10 @@ class Results extends Component{
                          repoName= {repo.name}
                          repoDescription={repo.description}                
                         />                 
-                        <IconsText classIcon ='icon__repositories' >
-                         {repo.stargazers_count}
-                        </IconsText>
+                        <IconsText 
+                        classIcon ='icon__repositories'
+                        children={repo.stargazers_count}
+                        />                          
                         </Fragment>                  
                       )}
                 </div>                
