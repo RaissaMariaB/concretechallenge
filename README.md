@@ -1,3 +1,26 @@
+## Acesso ao netlify
+https://jovial-bose-d116ea.netlify.com
+
+## Concrete Challenge
+O objetivo do desafio é encontrar usuários do GitHub e mostrá-los em tela a partir do acesso da API disponível.
+
+## Construido com
+React.js - Create React App.
+axios 
+react-router-dom  
+
+## CSS
+Fonts:
+Google Fonts - Raleway
+Online Web Fonts - Monaco
+
+## Github API endpoints:
+Usuário: https://api.github.com/users/{username}
+Repositorios: https://api.github.com/users/{username}/repos
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
