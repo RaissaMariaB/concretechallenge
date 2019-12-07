@@ -7,3 +7,9 @@
     display: flex;
     
   }
+
+.container_repo{
+  width: 55%;
+  margin: 0px;
+  padding: 20px;
+}

@@ -7,9 +7,8 @@ import './style.css'
 
 const Repositories = props => {
     const {repoName, repoDescription, repoStargazersCount }  = props
-    return (
-        <div>            
-                <div className='container_repos'>
+    return (                   
+             <div className='container_repos'>
                     <Description
                         user_name= {repoName}
                         user_login= {repoDescription}
@@ -23,8 +22,7 @@ const Repositories = props => {
                         classIcon='icon-repositories'
                     >{repoStargazersCount}</IconsText>
                     </div>
-                </div>            
-        </div>
+            </div>          
     )
 }
 

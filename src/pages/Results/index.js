@@ -105,7 +105,7 @@ class Results extends Component{
                 textRepositories={public_repos}
                 textFollowers={following}
                 /> 
-                <div>
+                <div className= 'container_repo'>
                     {this.state.repos.sort((a, b) => b.stargazers_count - a.stargazers_count).map(repo =>                    
                         <Fragment  key= {repo.id}>
                         <Repositories
